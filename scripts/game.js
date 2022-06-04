@@ -1,5 +1,3 @@
-let computerSelection;
-let playerSelection;
 let computerWins;
 let playerWins;
 
@@ -49,7 +47,6 @@ function playRound(player, computer) {
     else {
         return "Tie! Computer chose " + computer + " too!";
     }
-
     if (playerwon == true) {
         playerWins++;
         return "You won! " + result;
@@ -61,10 +58,13 @@ function playRound(player, computer) {
 }
 
 function game() {
+    let computerSelection;
+    let playerSelection;
+    let result;
     playerWins = 0;
     computerWins = 0;
     for (let i = 0; i <5; i++){
-        let result = "";
+        result = "";
         computerSelection = computerPlay();
         playerSelection = prompt("Enter your choice(Rock, Paper, Scissors):");
         console.log("Computer Selection: "+computerSelection);
@@ -73,7 +73,6 @@ function game() {
         console.log("Round " + (i+1) + ": " + result + "\nYour wins: "+playerWins + " || Computer wins: "+computerWins);
         alert("Round " + (i+1) + ": " + result + "\nYour wins: "+playerWins + " || Computer wins: "+computerWins + "\nPress OK to start next round.");
     }
-
     if (playerWins>computerWins){
         console.log("YOU WON THE GAME!");
         alert("YOU WON THE GAME!");
